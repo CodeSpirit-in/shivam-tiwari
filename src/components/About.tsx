@@ -3,17 +3,23 @@ import { GraduationCap } from "lucide-react";
 
 export function About() {
   return (
-    <Section id="about" eyebrow="Who I am" title="Building since fifteen.">
+    <Section id="about" eyebrow="Who I am" title="Building things that get used.">
       <div className="grid md:grid-cols-3 gap-6">
-        <div className="md:col-span-2 glass rounded-3xl p-8 md:p-10">
+        <div className="md:col-span-2 glass rounded-3xl p-8 md:p-10 space-y-5">
           <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
-            Some people build for scale. Some for funding. I started at{" "}
-            <span className="text-foreground font-medium">15</span> for something simpler — the
-            look on someone's face when a problem they'd carried too long finally wasn't theirs
-            anymore.
+            Software Engineer building real, scalable products like{" "}
+            <span className="text-foreground font-medium">CodeSpirit</span>,{" "}
+            <span className="text-foreground font-medium">ExpertKaro</span>, and{" "}
+            <span className="text-foreground font-medium">Microkahani</span> —
+            platforms already used by thousands of users in production.
           </p>
-          <p className="text-lg md:text-xl leading-relaxed text-muted-foreground mt-4">
-            That look is still the only metric that matters.
+          <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
+            I've built systems end-to-end — from backend architecture to
+            deployment — focused on performance, reliability, and real user impact.
+          </p>
+          <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
+            I like building things that don't just exist as ideas, but actually
+            get used, break under real load, and still keep running.
           </p>
         </div>
         <div className="glass rounded-3xl p-8 space-y-4">
