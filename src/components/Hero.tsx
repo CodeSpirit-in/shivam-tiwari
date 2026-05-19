@@ -54,14 +54,6 @@ export function Hero() {
               alt="Shivam Tiwari"
               className="size-64 md:size-80 rounded-2xl object-cover"
             />
-            <div className="absolute -bottom-4 -left-4 glass-yellow rounded-2xl px-4 py-3">
-              <div className="text-2xl font-bold text-primary">15M+</div>
-              <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Organic reach</div>
-            </div>
-            <div className="absolute -top-4 -right-4 glass-yellow rounded-2xl px-4 py-3">
-              <div className="text-2xl font-bold text-primary">1M+</div>
-              <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Concurrent users</div>
-            </div>
           </div>
         </div>
       </div>
