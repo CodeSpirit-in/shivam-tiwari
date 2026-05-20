@@ -52,11 +52,11 @@ export function Experience() {
         <div className="space-y-8">
           {experiences.map((exp) => (
             <div key={exp.company} className="relative pl-12 md:pl-16">
-              <div className="absolute left-0 md:left-2 top-8 size-8 rounded-[2px] bg-white/8 border border-white/15 grid place-items-center ring-4 ring-background">
-                <div className="size-2.5 rounded-[1px] bg-blue-500" />
+              <div className="absolute left-0 md:left-2 top-8 size-8 rounded-full bg-white/8 border border-white/15 grid place-items-center ring-4 ring-background">
+                <div className="size-2.5 rounded-full bg-[#a855f7]" />
               </div>
 
-              <div className="glass rounded-3xl p-7 md:p-9 hover:bg-white/[0.07] transition-colors">
+              <div className="glass rounded-[2px] p-7 md:p-9 hover:bg-white/[0.07] transition-colors">
                 <div className="flex flex-wrap items-start justify-between gap-4 mb-2">
                   <div className="flex items-start gap-4">
                     <img src={exp.logo} alt={`${exp.company} logo`} className="size-12 object-contain" loading="lazy" />
@@ -73,7 +73,7 @@ export function Experience() {
                 <ul className="mt-5 space-y-3">
                   {exp.points.map((p, i) => (
                     <li key={i} className="flex gap-3 text-muted-foreground leading-relaxed">
-                      <span className="mt-2 size-1.5 rounded-[1px] bg-blue-500 shrink-0" />
+                      <span className="mt-2 size-1.5 rounded-full bg-[#a855f7] shrink-0" />
                       <span>{p}</span>
                     </li>
                   ))}

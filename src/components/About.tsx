@@ -5,7 +5,7 @@ export function About() {
   return (
     <Section id="about" eyebrow="Who I am" title="Building things that get used.">
       <div className="grid md:grid-cols-3 gap-6">
-        <div className="md:col-span-2 glass rounded-3xl p-8 md:p-10 space-y-5">
+        <div className="md:col-span-2 glass rounded-[2px] p-8 md:p-10 space-y-5">
           <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
             Software Engineer building real, scalable products like{" "}
             <span className="text-foreground font-medium">CodeSpirit</span>,{" "}

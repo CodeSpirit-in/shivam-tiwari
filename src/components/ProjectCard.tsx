@@ -11,7 +11,7 @@ export function ProjectCard({
   featured?: boolean;
   index?: number;
 }) {
-  const isDark = featured || index % 2 === 0;
+  const isDark = featured || index !== 0;
   const panelClass = isDark
     ? "bg-[#171717] text-[#f7f2e8] border-[#2a2a2a]"
     : "bg-[#f3ecdb] text-[#141414] border-[#262626]";
@@ -22,7 +22,7 @@ export function ProjectCard({
   const badgeClass = isDark
     ? "border border-white/15 bg-white/8 text-white/75"
     : "border border-black/10 bg-white/55 text-black/70";
-  const accentBarClass = isDark ? "bg-[#3b82f6] text-[#171717]" : "bg-[#1e40af] text-[#f7f2e8]";
+  const accentBarClass = isDark ? "bg-[#7c3aed] text-[#171717]" : "bg-[#5b21b6] text-[#f7f2e8]";
   const logoRingClass = isDark ? "bg-white/6 border-white/10" : "bg-white/75 border-black/10";
 
   return (
@@ -33,7 +33,10 @@ export function ProjectCard({
     >
       <div className="relative p-5 md:p-6 flex h-full flex-col">
         <div className="flex items-start justify-between gap-4">
-          <div className="min-w-0">
+          <Link
+            to={`/project/${p.slug}`}
+            className="min-w-0 block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+          >
             <div className={`text-xs md:text-sm uppercase tracking-[0.28em] ${mutedTextClass}`}>
               {String(index + 1).padStart(2, "0")}
             </div>
@@ -45,7 +48,7 @@ export function ProjectCard({
             <div className={`mt-3 text-[11px] md:text-xs uppercase tracking-[0.34em] ${mutedTextClass}`}>
               {p.tagline}
             </div>
-          </div>
+          </Link>
 
           <div className={`size-14 md:size-16 shrink-0 overflow-hidden rounded-[2px] border p-2 ${logoRingClass}`}>
             <img src={p.logo} alt={`${p.name} logo`} className="size-full rounded-[2px] object-contain" loading="lazy" />
@@ -92,7 +95,6 @@ export function ProjectCard({
           </div>
         </div>
 
-        <div className={`absolute top-4 right-4 size-3 rounded-[2px] ${isDark ? "bg-[#3b82f6]" : "bg-[#1e40af]"}`} />
         <div className={`absolute left-4 bottom-4 size-2 rounded-full ${isDark ? "bg-white/30" : "bg-black/20"}`} />
       </div>
     </article>

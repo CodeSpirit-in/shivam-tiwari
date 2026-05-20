@@ -45,10 +45,10 @@ export function Skills() {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="space-y-4">
         {groups.map((g) => (
           <div key={g.title} className="border border-white/10 rounded-[2px] bg-white/3 p-6 hover:bg-white/5 transition-colors">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex flex-wrap items-center gap-3 mb-4">
               <div className="size-10 rounded-[2px] bg-white/5 border border-white/10 grid place-items-center">
                 <g.icon className="size-5 text-white/80" />
               </div>

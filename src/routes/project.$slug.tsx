@@ -60,7 +60,7 @@ function ProjectDetailPage() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 flex items-center justify-between">
             <div>
-              <div className="text-xs uppercase tracking-[0.3em] text-blue-400 mb-3">Project</div>
+              <div className="text-xs uppercase tracking-[0.3em] text-[#c084fc] mb-3">Project</div>
               <h1 className="text-4xl md:text-6xl font-black leading-tight tracking-tight">
                 {project.name}
               </h1>
@@ -81,18 +81,39 @@ function ProjectDetailPage() {
                 <ul className="space-y-4">
                   {project.points.map((point) => (
                     <li key={point} className="flex gap-4 text-white/75 leading-relaxed">
-                      <span className="mt-1.5 size-2 rounded-[1px] bg-blue-500 shrink-0 flex-shrink-0" />
+                      <span className="mt-1.5 size-2 rounded-[1px] bg-[#7c3aed] shrink-0 flex-shrink-0" />
                       <span className="text-sm md:text-base">{point}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
+              <div className="rounded-[2px] border border-white/10 bg-white/3 p-6 md:p-7 shadow-lg">
+                <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-white/70 mb-4">Links</h3>
+                <div className="flex flex-col gap-2">
+                  {project.links.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-[2px] border border-[#a855f7]/30 bg-[#7c3aed]/10 hover:bg-[#7c3aed]/20 px-4 py-2.5 text-sm font-semibold uppercase tracking-[0.12em] text-[#d8b4fe] inline-flex items-center justify-between transition-colors"
+                    >
+                      <span className="flex items-center gap-2">
+                        <link.icon className="size-4" />
+                        {link.label}
+                      </span>
+                      <ArrowUpRight className="size-3.5" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+
               {project.stats && project.stats.length > 0 && (
                 <div className="grid grid-cols-2 gap-3">
                   {project.stats.map((stat) => (
                     <div key={stat.label} className="rounded-[2px] border border-white/10 bg-white/5 p-4 text-center">
-                      <div className="text-3xl md:text-4xl font-black text-blue-400">{stat.value}</div>
+                      <div className="text-3xl md:text-4xl font-black text-[#c084fc]">{stat.value}</div>
                       <div className="mt-2 text-[10px] uppercase tracking-[0.28em] text-white/50 font-semibold">{stat.label}</div>
                     </div>
                   ))}
@@ -107,33 +128,13 @@ function ProjectDetailPage() {
                 <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-white/70 mb-4">Technology</h3>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
-                    <span key={tech} className="rounded-[1px] border border-white/8 bg-blue-500/10 px-3 py-1.5 text-xs text-blue-300 font-semibold uppercase tracking-[0.1em]">
+                    <span key={tech} className="rounded-[1px] border border-white/8 bg-[#7c3aed]/10 px-3 py-1.5 text-xs text-[#d8b4fe] font-semibold uppercase tracking-[0.1em]">
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
 
-              <div className="rounded-[2px] border border-white/10 bg-white/3 p-6 md:p-7 shadow-lg">
-                <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-white/70 mb-4">Links</h3>
-                <div className="flex flex-col gap-2">
-                  {project.links.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="rounded-[2px] border border-blue-500/30 bg-blue-500/10 hover:bg-blue-500/20 px-4 py-2.5 text-sm font-semibold uppercase tracking-[0.12em] text-blue-300 inline-flex items-center justify-between transition-colors"
-                    >
-                      <span className="flex items-center gap-2">
-                        <link.icon className="size-4" />
-                        {link.label}
-                      </span>
-                      <ArrowUpRight className="size-3.5" />
-                    </a>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </div>

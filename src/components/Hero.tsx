@@ -7,7 +7,7 @@ export function Hero() {
       <div className="mx-auto max-w-6xl grid md:grid-cols-[1fr_auto] gap-12 items-center w-full">
         <div className="space-y-8">
           <div className="rounded-[2px] border border-white/15 bg-white/8 px-4 py-1.5 inline-flex items-center gap-2 text-xs text-white/85">
-            <span className="size-2 rounded-[1px] bg-blue-500 animate-pulse" />
+            <span className="size-2 rounded-[1px] bg-[#7c3aed] animate-pulse" />
             Available for opportunities
           </div>
           <h1 className="text-5xl md:text-7xl font-bold leading-[1.05]">
