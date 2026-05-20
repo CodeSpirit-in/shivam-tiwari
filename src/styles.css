@@ -82,6 +82,10 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
     background-image:
       radial-gradient(circle at 15% 10%, oklch(0.72 0.2 295 / 0.18), transparent 40%),
       radial-gradient(circle at 85% 90%, oklch(0.72 0.2 295 / 0.12), transparent 45%);
@@ -89,9 +93,14 @@
     min-height: 100vh;
   }
 
+  p, li, span, a, label, button, input, textarea {
+    font-weight: 500;
+  }
+
   h1, h2, h3, h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
+    font-weight: 800;
   }
 }
 
