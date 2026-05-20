@@ -17,7 +17,7 @@ const groups = [
   { icon: Layout, title: "Frontend", items: ["React.js", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap", "Responsive Design", "UI/UX", "React Native", "Expo CLI", "Flutter"] },
   { icon: Server, title: "Backend", items: ["Node.js", "Express.js", "REST APIs", "GraphQL", "Microservices", "Server Architecture"] },
   { icon: Database, title: "Databases", items: ["MongoDB", "MySQL", "PostgreSQL", "Firebase", "Redis", "Query Optimization"] },
-  { icon: Cloud, title: "Cloud & DevOps", items: ["Azure", "AWS", "Vercel", "Netlify", "Cloudflare R2 CDN", "Git", "Docker"] },
+  { icon: Cloud, title: "Cloud & DevOps", items: ["Azure", "AWS", "GCP", "Vercel", "Netlify", "Cloudflare R2 CDN", "Git", "Docker"] },
   { icon: Shield, title: "Auth & Payments", items: ["JWT", "OAuth", "WhatsApp OTP Auth", "Razorpay", "Cashfree", "SMTP", "FCM"] },
   { icon: Users, title: "Soft Skills", items: ["Leadership", "Team Management", "Problem Solving", "Communication", "Project Management"] },
 ];

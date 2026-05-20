@@ -34,10 +34,10 @@ export function Hero() {
             </a>
           </div>
           <div className="flex items-center gap-4 pt-2">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="rounded-[2px] border border-white/10 bg-white/5 hover:bg-white/8 size-11 grid place-items-center transition-colors" aria-label="GitHub">
+            <a href="https://github.com/progressmantraclasses" target="_blank" rel="noopener noreferrer" className="rounded-[2px] border border-white/10 bg-white/5 hover:bg-white/8 size-11 grid place-items-center transition-colors" aria-label="GitHub">
               <Github className="size-5" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="rounded-[2px] border border-white/10 bg-white/5 hover:bg-white/8 size-11 grid place-items-center transition-colors" aria-label="LinkedIn">
+            <a href="https://linkedin.com/shivam13" target="_blank" rel="noopener noreferrer" className="rounded-[2px] border border-white/10 bg-white/5 hover:bg-white/8 size-11 grid place-items-center transition-colors" aria-label="LinkedIn">
               <Linkedin className="size-5" />
             </a>
             <a href="mailto:shivamtiwari28189@gmail.com" className="rounded-[2px] border border-white/10 bg-white/5 hover:bg-white/8 size-11 grid place-items-center transition-colors" aria-label="Email">

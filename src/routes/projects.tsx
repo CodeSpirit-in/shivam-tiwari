@@ -40,7 +40,7 @@ function ProjectsPage() {
 
           <div className="grid md:grid-cols-2 gap-5">
             {projects.map((p, i) => (
-              <ProjectCard key={p.name} p={p} featured={i === 0} />
+              <ProjectCard key={p.name} p={p} featured={i === 0} index={i} />
             ))}
           </div>
         </div>

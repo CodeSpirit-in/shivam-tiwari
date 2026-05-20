@@ -12,7 +12,7 @@ const nav = [
 export function Navbar() {
   return (
     <header className="fixed top-8 inset-x-0 z-50 px-4">
-      <div className="mx-auto max-w-5xl rounded-[2px] border border-white/8 bg-white/3 px-4 py-2.5 flex items-center justify-between">
+      <div className="mx-auto max-w-5xl rounded-[2px] border border-white/10 bg-slate-950/80 backdrop-blur-xl shadow-lg shadow-black/20 px-4 py-2.5 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5 group">
           <div className="size-10 rounded-[2px] overflow-hidden bg-white/5 border border-white/10 group-hover:scale-105 transition-transform">
             <img src={shivam} alt="Shivam Tiwari" className="size-full rounded-[2px] object-cover" />

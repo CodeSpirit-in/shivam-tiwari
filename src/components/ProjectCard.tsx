@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { Route as ProjectRoute } from "@/routes/project.$slug";
 import type { Project } from "@/lib/projects-data";
 
 export function ProjectCard({
@@ -24,6 +25,8 @@ export function ProjectCard({
     : "border border-black/10 bg-white/55 text-black/70";
   const accentBarClass = isDark ? "bg-[#7c3aed] text-[#171717]" : "bg-[#5b21b6] text-[#f7f2e8]";
   const logoRingClass = isDark ? "bg-white/6 border-white/10" : "bg-white/75 border-black/10";
+  const rawPath = ProjectRoute.path.replace("$slug", p.slug);
+  const projectPath = rawPath.startsWith("/") ? rawPath : `/${rawPath}`;
 
   return (
     <article
@@ -34,7 +37,7 @@ export function ProjectCard({
       <div className="relative p-5 md:p-6 flex h-full flex-col">
         <div className="flex items-start justify-between gap-4">
           <Link
-            to={`/project/${p.slug}`}
+            to={projectPath}
             className="min-w-0 block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
             <div className={`text-xs md:text-sm uppercase tracking-[0.28em] ${mutedTextClass}`}>
@@ -74,7 +77,7 @@ export function ProjectCard({
 
           <div className="flex flex-wrap gap-2 justify-start md:justify-end">
             <Link
-              to={`/project/${p.slug}`}
+              to={projectPath}
               className={`rounded-[2px] px-4 py-3 text-xs font-semibold uppercase tracking-[0.2em] border ${badgeClass} hover:opacity-80 transition-opacity`}
             >
               Details

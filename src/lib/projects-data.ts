@@ -18,6 +18,7 @@ export type Project = {
   tagline: string;
   summary: string;
   logo: string;
+  screenshot?: string;
   stats?: { label: string; value: string }[];
   points: string[];
   tech: string[];
@@ -77,6 +78,7 @@ export const projects: Project[] = [
       { label: "codespirit.in", href: "https://codespirit.in", icon: Globe },
       { label: "Android App", href: "https://play.google.com/store/apps/details?id=com.codespirit.app&hl=en_IN", icon: Smartphone },
     ],
+    screenshot: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ3u9mlPoXJ6BHPJd1DHi5HaFsUGoeifmEfQ&s",
     palette: newProjectPalette("#0f172a", "#1d4ed8", "#14b8a6"),
   },
   {
@@ -95,6 +97,7 @@ export const projects: Project[] = [
       { label: "expertkaro.com", href: "https://expertkaro.com", icon: Globe },
       { label: "Android App", href: "https://play.google.com/store/apps/details?id=com.expertkaro.app&hl=en_IN", icon: Smartphone },
     ],
+    screenshot: "https://iili.io/qzfFNfe.png",
     palette: newProjectPalette("#111827", "#7c3aed", "#ec4899"),
   },
   {
@@ -110,6 +113,7 @@ export const projects: Project[] = [
     ],
     tech: ["React.js", "Node.js", "TypeScript", "MongoDB", "Tailwind CSS", "Azure"],
     links: [{ label: "vithopia.com", href: "https://vithopia.com", icon: Globe }],
+    screenshot: "https://iili.io/C9IVScu.png",
     palette: newProjectPalette("#0f172a", "#0ea5e9", "#22c55e"),
   },
   {
@@ -125,6 +129,7 @@ export const projects: Project[] = [
     ],
     tech: ["React.js", "AI / LLMs", "Speech APIs", "Node.js", "TypeScript"],
     links: [{ label: "accessway.xyz", href: "https://accessway.xyz", icon: Globe }],
+    screenshot: "https://iili.io/qzfTEts.png",
     palette: newProjectPalette("#111827", "#f97316", "#facc15"),
   },
   {
@@ -140,6 +145,7 @@ export const projects: Project[] = [
     ],
     tech: ["MERN", "Machine Learning", "Tailwind", "Computer Vision", "Predictive Analytics"],
     links: [{ label: "Live Demo", href: "https://safecrowd.vercel.app/", icon: Globe }],
+    screenshot: "https://iili.io/C9IwaEB.png",
     palette: newProjectPalette("#020617", "#0369a1", "#22c55e"),
   },
   {
@@ -155,6 +161,7 @@ export const projects: Project[] = [
     ],
     tech: ["MERN", "Socket.io", "JWT", "Realtime Chat", "Privacy"],
     links: [{ label: "Live Demo", href: "https://unknown-chats.web.app/", icon: Globe }],
+    screenshot: "https://iili.io/C9INDlI.png",
     palette: newProjectPalette("#111827", "#2563eb", "#14b8a6"),
   },
   {
@@ -170,6 +177,7 @@ export const projects: Project[] = [
     ],
     tech: ["HTML", "CSS", "JavaScript", "Education Platform"],
     links: [{ label: "Live Demo", href: "https://shivam-13.netlify.app/", icon: Globe }],
+    screenshot: "https://iili.io/C9ISeVa.png",
     palette: newProjectPalette("#1e1b4b", "#2563eb", "#f59e0b"),
   },
   {
@@ -185,6 +193,7 @@ export const projects: Project[] = [
     ],
     tech: ["MERN", "WebRTC", "Tailwind", "Realtime Video", "Chat"],
     links: [{ label: "Live Demo", href: "https://vitalsyncs.web.app/", icon: Globe }],
+    screenshot: "https://iili.io/C9Iv9OF.png",
     palette: newProjectPalette("#190f2e", "#db2777", "#7c3aed"),
   },
   {
@@ -200,6 +209,7 @@ export const projects: Project[] = [
     ],
     tech: ["React Native", "MERN", "MongoDB", "AI Guidance", "Mobile"],
     links: [{ label: "Live Demo", href: "https://burnoutbuddy.vercel.app/", icon: Globe }],
+    screenshot: "https://iili.io/C9Ig2pI.png",
     palette: newProjectPalette("#1f2937", "#ef4444", "#f59e0b"),
   },
   {
@@ -215,6 +225,7 @@ export const projects: Project[] = [
     ],
     tech: ["MERN", "Tailwind", "PostgreSQL", "Operations", "Redistribution"],
     links: [{ label: "Live Demo", href: "https://foodgrant.vercel.app/", icon: Globe }],
+    screenshot: "https://iili.io/C9Ir8Kb.png",
     palette: newProjectPalette("#052e16", "#16a34a", "#eab308"),
   },
   {
@@ -230,7 +241,24 @@ export const projects: Project[] = [
     ],
     tech: ["TensorFlow", "React", "Python", "Computer Vision", "AI"],
     links: [{ label: "Live Demo", href: "https://faceexpresssions.web.app/", icon: Globe }],
+    screenshot: "https://iili.io/C9I6BCF.png",
     palette: newProjectPalette("#0f172a", "#0ea5e9", "#8b5cf6"),
+  },
+  {
+    slug: "careerwill",
+    name: "CareerWill",
+    tagline: "AI-driven Career Courses & Assistants",
+    summary:
+      "An AI-powered multi-lingual course platform with voice-enabled agents and personalized learning tracks for competitive exam preparation.",
+    logo: createMonogramLogo("CareerWill", newProjectPalette("#0b1220", "#7c3aed", "#8b5cf6")),
+    points: [
+      "Multi-lingual voice-enabled assistants for learning with mic and speech interaction.",
+      "Scalable course delivery and assessment flows built for exam preparation and continuous learning.",
+    ],
+    tech: ["React.js", "Node.js", "AI", "Speech APIs", "Multi-language"],
+    links: [{ label: "career-will.vercel.app", href: "https://career-will.vercel.app/", icon: Globe }],
+    screenshot: "https://iili.io/C9IP6Ol.png",
+    palette: newProjectPalette("#07122a", "#6d28d9", "#a855f7"),
   },
 ];
 
