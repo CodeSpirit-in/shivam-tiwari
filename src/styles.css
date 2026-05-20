@@ -83,8 +83,8 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     background-image:
-      radial-gradient(circle at 15% 10%, oklch(0.88 0.18 95 / 0.12), transparent 40%),
-      radial-gradient(circle at 85% 90%, oklch(0.88 0.18 95 / 0.08), transparent 45%);
+      radial-gradient(circle at 15% 10%, oklch(0.72 0.2 295 / 0.18), transparent 40%),
+      radial-gradient(circle at 85% 90%, oklch(0.72 0.2 295 / 0.12), transparent 45%);
     background-attachment: fixed;
     min-height: 100vh;
   }
@@ -113,16 +113,23 @@
   }
 
   .glass-yellow {
-    background: linear-gradient(135deg, oklch(0.88 0.18 95 / 0.15), oklch(0.88 0.18 95 / 0.05));
+    background: linear-gradient(135deg, oklch(0.72 0.2 295 / 0.22), oklch(0.72 0.2 295 / 0.08));
     backdrop-filter: blur(20px) saturate(160%);
     -webkit-backdrop-filter: blur(20px) saturate(160%);
-    border: 1px solid oklch(0.88 0.18 95 / 0.3);
+    border: 1px solid oklch(0.72 0.2 295 / 0.4);
   }
 
   .text-gradient-yellow {
-    background: linear-gradient(135deg, var(--yellow), var(--yellow-glow));
+    background: linear-gradient(135deg, var(--purple), var(--purple-glow));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+
+  .text-highlight {
+    background: linear-gradient(120deg, oklch(0.72 0.2 295 / 0.35), oklch(0.8 0.22 305 / 0.35));
+    padding: 0 0.3em;
+    border-radius: 0.4em;
+    color: var(--foreground);
   }
 }
