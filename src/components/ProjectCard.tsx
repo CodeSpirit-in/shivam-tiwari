@@ -1,68 +1,99 @@
 import { ExternalLink } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import type { Project } from "@/lib/projects-data";
 
-export function ProjectCard({ p, featured = false }: { p: Project; featured?: boolean }) {
+export function ProjectCard({
+  p,
+  featured = false,
+  index = 0,
+}: {
+  p: Project;
+  featured?: boolean;
+  index?: number;
+}) {
+  const isDark = featured || index % 2 === 0;
+  const panelClass = isDark
+    ? "bg-[#171717] text-[#f7f2e8] border-[#2a2a2a]"
+    : "bg-[#f3ecdb] text-[#141414] border-[#262626]";
+  const mutedTextClass = isDark ? "text-white/70" : "text-black/60";
+  const chipClass = isDark
+    ? "border border-white/15 bg-white/5 text-white/85"
+    : "border border-black/10 bg-white/30 text-black/80";
+  const badgeClass = isDark
+    ? "border border-white/15 bg-white/8 text-white/75"
+    : "border border-black/10 bg-white/55 text-black/70";
+  const accentBarClass = isDark ? "bg-[#3b82f6] text-[#171717]" : "bg-[#1e40af] text-[#f7f2e8]";
+  const logoRingClass = isDark ? "bg-white/6 border-white/10" : "bg-white/75 border-black/10";
+
   return (
     <article
-      className={`glass rounded-3xl p-7 md:p-8 flex flex-col relative overflow-hidden group hover:bg-white/[0.07] transition-colors ${
+      className={`rounded-[2px] border shadow-[0_8px_0_rgba(0,0,0,0.08)] transition-transform duration-200 hover:-translate-y-1 ${panelClass} ${
         featured ? "md:col-span-2" : ""
       }`}
     >
-      <div className="absolute -top-24 -right-24 size-56 rounded-full bg-primary/25 blur-3xl opacity-50 group-hover:opacity-100 transition-opacity" />
-      <div className="relative flex flex-col h-full">
-        <div className="flex items-start gap-4">
-          <div className="glass size-14 rounded-2xl grid place-items-center overflow-hidden shrink-0 p-1.5">
-            <img src={p.logo} alt={`${p.name} logo`} className="size-full object-contain rounded-xl" loading="lazy" />
-          </div>
+      <div className="relative p-5 md:p-6 flex h-full flex-col">
+        <div className="flex items-start justify-between gap-4">
           <div className="min-w-0">
-            <h3 className="text-2xl font-bold leading-tight">{p.name}</h3>
-            <div className="text-sm text-muted-foreground mt-1">{p.tagline}</div>
+            <div className={`text-xs md:text-sm uppercase tracking-[0.28em] ${mutedTextClass}`}>
+              {String(index + 1).padStart(2, "0")}
+            </div>
+            <div className="mt-3 flex items-center gap-3">
+              <h3 className="text-3xl md:text-4xl font-black uppercase leading-[0.95] tracking-tight">
+                {p.name}
+              </h3>
+            </div>
+            <div className={`mt-3 text-[11px] md:text-xs uppercase tracking-[0.34em] ${mutedTextClass}`}>
+              {p.tagline}
+            </div>
+          </div>
+
+          <div className={`size-14 md:size-16 shrink-0 overflow-hidden rounded-[2px] border p-2 ${logoRingClass}`}>
+            <img src={p.logo} alt={`${p.name} logo`} className="size-full rounded-[2px] object-contain" loading="lazy" />
           </div>
         </div>
 
-        {p.stats && (
-          <div className="grid grid-cols-2 gap-3 mt-5">
-            {p.stats.map((s) => (
-              <div key={s.label} className="glass-yellow rounded-2xl p-3 text-center">
-                <div className="text-xl md:text-2xl font-bold text-gradient-yellow">{s.value}</div>
-                <div className="text-[10px] uppercase tracking-wider text-muted-foreground mt-0.5">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        )}
+        <p className={`mt-6 max-w-3xl text-sm md:text-[15px] leading-7 ${mutedTextClass}`}>
+          {p.summary}
+        </p>
 
-        <ul className="mt-5 space-y-2.5">
-          {p.points.map((pt, i) => (
-            <li key={i} className="flex gap-3 text-muted-foreground leading-relaxed text-sm">
-              <span className="mt-2 size-1.5 rounded-full bg-primary shrink-0" />
-              <span>{pt}</span>
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-5 flex flex-wrap gap-1.5">
+        <div className="mt-6 flex flex-wrap gap-2">
           {p.tech.map((t) => (
-            <span key={t} className="glass rounded-full px-2.5 py-1 text-[11px] text-muted-foreground">
+            <span key={t} className={`rounded-[2px] px-3 py-1.5 text-[11px] uppercase tracking-[0.18em] ${chipClass}`}>
               {t}
             </span>
           ))}
         </div>
 
-        <div className="mt-5 flex flex-wrap gap-2 pt-4 border-t border-white/10">
-          {p.links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-yellow rounded-xl px-3 py-2 text-xs font-medium text-primary inline-flex items-center gap-2 hover:scale-105 transition-transform"
+        <div className="mt-auto pt-6 grid gap-3 md:grid-cols-[1fr_auto] items-end">
+          <div className={`rounded-[2px] px-4 py-3 text-sm font-semibold uppercase tracking-[0.16em] ${accentBarClass}`}>
+            {p.stats?.[0] ? `${p.stats[0].value} · ${p.stats[0].label}` : p.links[0]?.label ?? "Live Project"}
+          </div>
+
+          <div className="flex flex-wrap gap-2 justify-start md:justify-end">
+            <Link
+              to={`/project/${p.slug}`}
+              className={`rounded-[2px] px-4 py-3 text-xs font-semibold uppercase tracking-[0.2em] border ${badgeClass} hover:opacity-80 transition-opacity`}
             >
-              <l.icon className="size-3.5" />
-              {l.label}
-              <ExternalLink className="size-3 opacity-60" />
-            </a>
-          ))}
+              Details
+            </Link>
+            {p.links.slice(0, 1).map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`rounded-[2px] px-4 py-3 text-xs font-semibold uppercase tracking-[0.2em] border inline-flex items-center gap-2 ${badgeClass} hover:opacity-80 transition-opacity`}
+              >
+                <l.icon className="size-3.5" />
+                <span>{l.label}</span>
+                <ExternalLink className="size-3 opacity-70" />
+              </a>
+            ))}
+          </div>
         </div>
+
+        <div className={`absolute top-4 right-4 size-3 rounded-[2px] ${isDark ? "bg-[#3b82f6]" : "bg-[#1e40af]"}`} />
+        <div className={`absolute left-4 bottom-4 size-2 rounded-full ${isDark ? "bg-white/30" : "bg-black/20"}`} />
       </div>
     </article>
   );

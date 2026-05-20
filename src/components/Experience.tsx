@@ -44,7 +44,7 @@ export function Experience() {
     <Section
       id="experience"
       eyebrow="Career"
-      title={<>Experience <span className="text-gradient-yellow">&</span> Achievements.</>}
+      title={<>Experience <span className="text-primary">&</span> Achievements.</>}
     >
       <div className="relative">
         <div className="absolute left-4 md:left-6 top-2 bottom-2 w-px bg-gradient-to-b from-primary/60 via-primary/30 to-transparent" />
@@ -52,30 +52,28 @@ export function Experience() {
         <div className="space-y-8">
           {experiences.map((exp) => (
             <div key={exp.company} className="relative pl-12 md:pl-16">
-              <div className="absolute left-0 md:left-2 top-8 size-8 rounded-full glass-yellow grid place-items-center ring-4 ring-background">
-                <div className="size-2.5 rounded-full bg-primary" />
+              <div className="absolute left-0 md:left-2 top-8 size-8 rounded-[2px] bg-white/8 border border-white/15 grid place-items-center ring-4 ring-background">
+                <div className="size-2.5 rounded-[1px] bg-blue-500" />
               </div>
 
               <div className="glass rounded-3xl p-7 md:p-9 hover:bg-white/[0.07] transition-colors">
                 <div className="flex flex-wrap items-start justify-between gap-4 mb-2">
                   <div className="flex items-start gap-4">
-                    <div className="glass size-14 rounded-2xl grid place-items-center overflow-hidden shrink-0 p-1.5">
-                      <img src={exp.logo} alt={`${exp.company} logo`} className="size-full object-contain rounded-xl" loading="lazy" />
-                    </div>
+                    <img src={exp.logo} alt={`${exp.company} logo`} className="size-12 object-contain" loading="lazy" />
                     <div>
                       <h3 className="text-2xl font-bold">{exp.role}</h3>
                       <div className="text-primary font-medium mt-1">{exp.company}</div>
                       <div className="text-sm text-muted-foreground mt-1">{exp.tagline}</div>
                     </div>
                   </div>
-                  <div className="glass-yellow rounded-full px-4 py-1.5 text-sm font-medium text-primary">
+                  <div className="rounded-[2px] border border-white/15 bg-white/8 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.12em] text-white/80">
                     {exp.date}
                   </div>
                 </div>
                 <ul className="mt-5 space-y-3">
                   {exp.points.map((p, i) => (
                     <li key={i} className="flex gap-3 text-muted-foreground leading-relaxed">
-                      <span className="mt-2 size-1.5 rounded-full bg-primary shrink-0" />
+                      <span className="mt-2 size-1.5 rounded-[1px] bg-blue-500 shrink-0" />
                       <span>{p}</span>
                     </li>
                   ))}

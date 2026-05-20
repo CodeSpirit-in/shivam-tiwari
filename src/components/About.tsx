@@ -22,8 +22,8 @@ export function About() {
             get used, break under real load, and still keep running.
           </p>
         </div>
-        <div className="glass rounded-3xl p-8 space-y-4">
-          <div className="glass-yellow size-12 rounded-2xl grid place-items-center">
+        <div className="rounded-[2px] border border-white/10 bg-white/3 p-8 space-y-4 shadow-lg">
+          <div className="size-12 rounded-[2px] border border-white/15 bg-white/8 grid place-items-center">
             <GraduationCap className="size-6 text-primary" />
           </div>
           <div>

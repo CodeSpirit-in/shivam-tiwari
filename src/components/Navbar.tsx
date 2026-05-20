@@ -11,14 +11,14 @@ const nav = [
 
 export function Navbar() {
   return (
-    <header className="fixed top-4 inset-x-0 z-50 px-4">
-      <div className="mx-auto max-w-5xl glass rounded-2xl px-4 py-2.5 flex items-center justify-between">
+    <header className="fixed top-8 inset-x-0 z-50 px-4">
+      <div className="mx-auto max-w-5xl rounded-[2px] border border-white/8 bg-white/3 px-4 py-2.5 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="glass-yellow size-10 rounded-full p-0.5 ring-1 ring-primary/40 group-hover:scale-105 transition-transform">
-            <img src={shivam} alt="Shivam Tiwari" className="size-full rounded-full object-cover" />
+          <div className="size-10 rounded-[2px] overflow-hidden bg-white/5 border border-white/10 group-hover:scale-105 transition-transform">
+            <img src={shivam} alt="Shivam Tiwari" className="size-full rounded-[2px] object-cover" />
           </div>
           <span className="hidden sm:inline font-display font-bold text-base tracking-tight">
-            Shivam<span className="text-gradient-yellow">.</span>
+            Shivam<span className="text-primary">.</span>
           </span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
@@ -32,7 +32,7 @@ export function Navbar() {
           href="/Shivam_Tiwari_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="glass-yellow rounded-xl px-4 py-2 text-sm font-medium text-primary hover:scale-105 transition-transform"
+          className="rounded-[2px] border border-white/15 bg-white/8 hover:bg-white/12 px-4 py-2 text-sm font-semibold uppercase tracking-[0.15em] text-white/85 transition-colors"
         >
           Resume
         </a>

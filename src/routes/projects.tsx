@@ -31,10 +31,10 @@ function ProjectsPage() {
           <div className="mb-12">
             <div className="text-xs uppercase tracking-[0.3em] text-primary mb-3">All Products</div>
             <h1 className="text-4xl md:text-6xl font-bold">
-              Everything I've <span className="text-gradient-yellow">shipped.</span>
+              Everything I've <span className="text-primary">shipped.</span>
             </h1>
             <p className="text-muted-foreground mt-4 max-w-2xl text-lg">
-              A full catalogue of platforms, apps, and SaaS products I've built end-to-end.
+              A full catalogue of platforms, apps, and SaaS products I've built end-to-end. Open any project to see the longer story, tech stack, and live links.
             </p>
           </div>
 
