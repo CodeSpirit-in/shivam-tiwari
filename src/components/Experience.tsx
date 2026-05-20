@@ -44,7 +44,7 @@ export function Experience() {
     <Section
       id="experience"
       eyebrow="Career"
-      title="Experience & Achievements."
+      title={<>Experience <span className="text-gradient-yellow">&</span> Achievements.</>}
     >
       <div className="relative">
         <div className="absolute left-4 md:left-6 top-2 bottom-2 w-px bg-gradient-to-b from-primary/60 via-primary/30 to-transparent" />
