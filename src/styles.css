@@ -42,31 +42,31 @@
   --card-foreground: oklch(0.98 0 0);
   --popover: oklch(0.18 0 0);
   --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.88 0.18 95);
+  --primary: oklch(0.72 0.2 295);
   --primary-foreground: oklch(0.13 0 0);
   --secondary: oklch(0.22 0 0);
   --secondary-foreground: oklch(0.98 0 0);
   --muted: oklch(0.22 0 0);
   --muted-foreground: oklch(0.7 0 0);
-  --accent: oklch(0.88 0.18 95);
+  --accent: oklch(0.72 0.2 295);
   --accent-foreground: oklch(0.13 0 0);
   --destructive: oklch(0.6 0.24 27);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(1 0 0 / 0.1);
   --input: oklch(1 0 0 / 0.15);
-  --ring: oklch(0.88 0.18 95);
+  --ring: oklch(0.72 0.2 295);
 
-  --yellow: oklch(0.88 0.18 95);
-  --yellow-glow: oklch(0.92 0.2 100);
+  --purple: oklch(0.72 0.2 295);
+  --purple-glow: oklch(0.8 0.22 305);
 
   --glass-bg: oklch(1 0 0 / 0.05);
   --glass-border: oklch(1 0 0 / 0.12);
   --glass-highlight: oklch(1 0 0 / 0.2);
 
-  --gradient-radial: radial-gradient(circle at 20% 20%, oklch(0.88 0.18 95 / 0.25), transparent 50%),
-                     radial-gradient(circle at 80% 80%, oklch(0.88 0.18 95 / 0.15), transparent 50%);
+  --gradient-radial: radial-gradient(circle at 20% 20%, oklch(0.72 0.2 295 / 0.28), transparent 50%),
+                     radial-gradient(circle at 80% 80%, oklch(0.72 0.2 295 / 0.18), transparent 50%);
   --shadow-glass: 0 8px 32px 0 oklch(0 0 0 / 0.5);
-  --shadow-yellow: 0 0 60px oklch(0.88 0.18 95 / 0.3);
+  --shadow-purple: 0 0 60px oklch(0.72 0.2 295 / 0.4);
 }
 
 @layer base {
