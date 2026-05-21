@@ -16,7 +16,7 @@ export function Hero() {
           <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
             Software Engineer building scalable platforms for millions. From OTT micro-drama
             apps to event SaaS architected for 1M+ concurrent users — I ship products end-to-end
-            as an app developer, full stack developer, backend developer, and cloud & DevOps engineer.
+            as an app developer, full stack developer, backend developer, AI & LLMS , AI agents and cloud & DevOps engineer.
           </p>
           <div className="flex flex-wrap gap-3">
             <a
