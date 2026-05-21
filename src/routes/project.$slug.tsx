@@ -56,48 +56,55 @@ function ProjectDetailPage() {
   return (
     <main className="relative min-h-screen">
       <Navbar />
-      <section className="px-4 pt-32 pb-24">
+      <section className="px-4 pt-28 pb-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <div className="mb-12 flex items-center justify-between">
+          <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <div className="text-xs uppercase tracking-[0.3em] text-[#c084fc] mb-3">Project</div>
-              <h1 className="text-4xl md:text-6xl font-black leading-tight tracking-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
                 {project.name}
               </h1>
-              <p className="mt-3 text-lg text-white/60 max-w-2xl leading-relaxed">{project.summary}</p>
+              <p className="mt-4 text-base md:text-lg text-white/60 max-w-3xl leading-relaxed">
+                {project.summary}
+              </p>
             </div>
             <Link
               to="/projects"
-              className="rounded-[2px] border border-white/15 bg-white/8 hover:bg-white/12 px-4 py-2 text-sm inline-flex items-center gap-2 transition-colors shrink-0 h-fit"
+              className="rounded-[2px] border border-white/15 bg-white/8 hover:bg-white/12 px-4 py-3 text-sm font-semibold inline-flex items-center gap-2 transition-colors shrink-0"
             >
-              <ArrowLeft className="size-4" /> Back
+              <ArrowLeft className="size-4" /> Back to projects
             </Link>
           </div>
 
-          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
+          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] items-start">
             <div className="space-y-6">
+              <div className="rounded-[2px] border border-white/10 bg-white/5 p-6 md:p-8 shadow-lg">
+                <h2 className="text-sm font-bold uppercase tracking-[0.16em] text-[#c084fc] mb-4">About this project</h2>
+                <p className="text-base leading-8 text-white/75">{project.summary}</p>
+              </div>
+
               <div className="rounded-[2px] border border-white/10 bg-gradient-to-br from-white/5 to-white/3 p-6 md:p-8 shadow-lg">
                 <h2 className="text-xl font-bold uppercase tracking-[0.12em] text-white/90 mb-6">Key highlights</h2>
                 <ul className="space-y-4">
                   {project.points.map((point) => (
                     <li key={point} className="flex gap-4 text-white/75 leading-relaxed">
-                      <span className="mt-1.5 size-2 rounded-[1px] bg-[#7c3aed] shrink-0 flex-shrink-0" />
+                      <span className="mt-1.5 size-2 rounded-[1px] bg-[#7c3aed] shrink-0" />
                       <span className="text-sm md:text-base">{point}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="rounded-[2px] border border-white/10 bg-white/3 p-6 md:p-7 shadow-lg">
-                <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-white/70 mb-4">Links</h3>
-                <div className="flex flex-col gap-2">
+              <div className="rounded-[2px] border border-white/10 bg-white/5 p-6 md:p-8 shadow-lg">
+                <h2 className="text-sm font-bold uppercase tracking-[0.16em] text-white/70 mb-4">Links</h2>
+                <div className="flex flex-col gap-3">
                   {project.links.map((link) => (
                     <a
                       key={link.href}
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-[2px] border border-[#a855f7]/30 bg-[#7c3aed]/10 hover:bg-[#7c3aed]/20 px-4 py-2.5 text-sm font-semibold uppercase tracking-[0.12em] text-[#d8b4fe] inline-flex items-center justify-between transition-colors"
+                      className="rounded-[2px] border border-[#a855f7]/30 bg-[#7c3aed]/10 hover:bg-[#7c3aed]/20 px-4 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-[#d8b4fe] inline-flex items-center justify-between transition-colors"
                     >
                       <span className="flex items-center gap-2">
                         <link.icon className="size-4" />
@@ -110,9 +117,9 @@ function ProjectDetailPage() {
               </div>
 
               {project.stats && project.stats.length > 0 && (
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   {project.stats.map((stat) => (
-                    <div key={stat.label} className="rounded-[2px] border border-white/10 bg-white/5 p-4 text-center">
+                    <div key={stat.label} className="rounded-[2px] border border-white/10 bg-white/5 p-5 text-center">
                       <div className="text-3xl md:text-4xl font-black text-[#c084fc]">{stat.value}</div>
                       <div className="mt-2 text-[10px] uppercase tracking-[0.28em] text-white/50 font-semibold">{stat.label}</div>
                     </div>
@@ -121,11 +128,22 @@ function ProjectDetailPage() {
               )}
             </div>
 
-            <div className="space-y-6 lg:sticky lg:top-32">
-              <ProjectArtwork project={project} className="shadow-[0_28px_120px_rgba(0,0,0,0.34)] rounded-[2px]" />
+            <div className="space-y-6 lg:sticky lg:top-24">
+              <ProjectArtwork project={project} className="w-full shadow-[0_28px_120px_rgba(0,0,0,0.34)] rounded-[2rem]" />
 
-              <div className="rounded-[2px] border border-white/10 bg-white/3 p-6 md:p-7 shadow-lg">
-                <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-white/70 mb-4">Technology</h3>
+              <div className="rounded-[2px] border border-white/10 bg-white/5 p-6 md:p-7 shadow-lg">
+                <h2 className="text-sm font-bold uppercase tracking-[0.16em] text-white/70 mb-4">Tools of the trade</h2>
+                <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                  {project.tech.map((tech) => (
+                    <span key={tech} className="rounded-[1px] border border-white/15 bg-[#7c3aed]/10 px-3 py-2 text-xs text-[#e9d5ff] font-semibold uppercase tracking-[0.11em]">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-[2px] border border-white/10 bg-white/5 p-6 md:p-7 shadow-lg">
+                <h2 className="text-sm font-bold uppercase tracking-[0.16em] text-white/70 mb-4">Technology</h2>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
                     <span key={tech} className="rounded-[1px] border border-white/8 bg-[#7c3aed]/10 px-3 py-1.5 text-xs text-[#d8b4fe] font-semibold uppercase tracking-[0.1em]">
@@ -134,7 +152,6 @@ function ProjectDetailPage() {
                   ))}
                 </div>
               </div>
-
             </div>
           </div>
         </div>

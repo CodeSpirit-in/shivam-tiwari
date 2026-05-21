@@ -52,8 +52,8 @@ export function Experience() {
         <div className="space-y-8">
           {experiences.map((exp) => (
             <div key={exp.company} className="relative pl-12 md:pl-16">
-              <div className="absolute left-0 md:left-2 top-8 size-8 rounded-full bg-white/8 border border-white/15 grid place-items-center ring-4 ring-background">
-                <div className="size-2.5 rounded-full bg-[#a855f7]" />
+              <div className="absolute left-0 md:left-2 top-8 size-8 rounded-full bg-slate-950 border border-[#a855f7]/30 shadow-[0_0_24px_rgba(167,139,250,0.35)] grid place-items-center">
+                <div className="size-3 rounded-full bg-[#a855f7] shadow-[0_0_18px_rgba(167,139,250,0.6)]" />
               </div>
 
               <div className="glass rounded-[2px] p-7 md:p-9 hover:bg-white/[0.07] transition-colors">
