@@ -8,7 +8,7 @@ export function Projects() {
   const featured = featuredProjectSlugs
     .map((slug) => projects.find((project) => project.slug === slug))
     .filter((project): project is (typeof projects)[number] => Boolean(project))
-    .slice(0, 11);
+    .slice(0, 5);
 
   return (
     <Section id="projects" eyebrow="Products" title="Things I've shipped.">
