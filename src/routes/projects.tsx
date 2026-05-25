@@ -4,7 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects } from "@/lib/projects-data";
 
-export const Route = createFileRoute("/projects")({
+export const route = createFileRoute("/projects")({
   head: () => ({
     meta: [
       { title: "Projects — Shivam Tiwari" },
@@ -65,6 +65,9 @@ function ProjectsPage() {
 
           <div className="mb-10">
             <h2 className="text-3xl font-semibold mb-5">Other Projects</h2>
+            <p className="text-muted-foreground max-w-3xl leading-7 mb-6">
+              I have made these projects to learn or for hackathons.
+            </p>
             <div className="grid md:grid-cols-2 gap-5">
               {otherProjects.map((p, i) => (
                 <ProjectCard key={p.name} p={p} featured={false} index={i + 1} />

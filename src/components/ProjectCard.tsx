@@ -1,6 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import { Route as ProjectRoute } from "@/routes/project.$slug";
+import { route as ProjectRoute } from "@/routes/project.$slug";
 import type { Project } from "@/lib/projects-data";
 
 export function ProjectCard({

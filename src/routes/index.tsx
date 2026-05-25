@@ -7,7 +7,7 @@ import { Projects } from "@/components/Projects";
 import { Skills } from "@/components/Skills";
 import { Contact } from "@/components/Contact";
 
-export const Route = createFileRoute("/")({
+export const route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Shivam Tiwari — Software Engineer & Product Builder" },

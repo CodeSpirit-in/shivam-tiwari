@@ -4,7 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { ProjectArtwork } from "@/components/ProjectArtwork";
 import { getProjectBySlug, projects } from "@/lib/projects-data";
 
-export const Route = createFileRoute("/project/$slug")({
+export const route = createFileRoute("/project/$slug")({
   head: ({ params }) => {
     const project = getProjectBySlug(params.slug);
 
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/project/$slug")({
 });
 
 function ProjectDetailPage() {
-  const { slug } = Route.useParams();
+  const { slug } = route.useParams();
   const project = getProjectBySlug(slug);
 
   if (!project) {
