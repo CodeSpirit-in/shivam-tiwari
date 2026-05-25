@@ -83,6 +83,23 @@ function ProjectDetailPage() {
                 <p className="text-base leading-8 text-white/75">{project.summary}</p>
               </div>
 
+              {(project.problem || project.solution) && (
+                <div className="grid gap-6 lg:grid-cols-2">
+                  {project.problem && (
+                    <div className="rounded-[2px] border border-white/10 bg-white/5 p-6 md:p-8 shadow-lg">
+                      <h2 className="text-sm font-bold uppercase tracking-[0.16em] text-white/70 mb-4">The problem</h2>
+                      <p className="text-base leading-8 text-white/75">{project.problem}</p>
+                    </div>
+                  )}
+                  {project.solution && (
+                    <div className="rounded-[2px] border border-white/10 bg-white/5 p-6 md:p-8 shadow-lg">
+                      <h2 className="text-sm font-bold uppercase tracking-[0.16em] text-white/70 mb-4">The solution</h2>
+                      <p className="text-base leading-8 text-white/75">{project.solution}</p>
+                    </div>
+                  )}
+                </div>
+              )}
+
               <div className="rounded-[2px] border border-white/10 bg-gradient-to-br from-white/5 to-white/3 p-6 md:p-8 shadow-lg">
                 <h2 className="text-xl font-bold uppercase tracking-[0.12em] text-white/90 mb-6">Key highlights</h2>
                 <ul className="space-y-4">
@@ -94,6 +111,48 @@ function ProjectDetailPage() {
                   ))}
                 </ul>
               </div>
+
+              {project.details && project.details.length > 0 && (
+                <div className="rounded-[2px] border border-white/10 bg-white/5 p-6 md:p-8 shadow-lg">
+                  <h2 className="text-xl font-bold uppercase tracking-[0.12em] text-white/90 mb-6">What I delivered</h2>
+                  <ul className="space-y-4">
+                    {project.details.map((detail) => (
+                      <li key={detail} className="flex gap-4 text-white/75 leading-relaxed">
+                        <span className="mt-1.5 size-2 rounded-[1px] bg-[#7c3aed] shrink-0" />
+                        <span className="text-sm md:text-base">{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {project.architecture && project.architecture.length > 0 && (
+                <div className="rounded-[2px] border border-white/10 bg-white/5 p-6 md:p-8 shadow-lg">
+                  <h2 className="text-xl font-bold uppercase tracking-[0.12em] text-white/90 mb-6">Architecture & systems</h2>
+                  <ul className="space-y-4">
+                    {project.architecture.map((item) => (
+                      <li key={item} className="flex gap-4 text-white/75 leading-relaxed">
+                        <span className="mt-1.5 size-2 rounded-[1px] bg-[#7c3aed] shrink-0" />
+                        <span className="text-sm md:text-base">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {project.contributions && project.contributions.length > 0 && (
+                <div className="rounded-[2px] border border-white/10 bg-white/5 p-6 md:p-8 shadow-lg">
+                  <h2 className="text-xl font-bold uppercase tracking-[0.12em] text-white/90 mb-6">My contributions</h2>
+                  <ul className="space-y-4">
+                    {project.contributions.map((item) => (
+                      <li key={item} className="flex gap-4 text-white/75 leading-relaxed">
+                        <span className="mt-1.5 size-2 rounded-[1px] bg-[#7c3aed] shrink-0" />
+                        <span className="text-sm md:text-base">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               <div className="rounded-[2px] border border-white/10 bg-white/5 p-6 md:p-8 shadow-lg">
                 <h2 className="text-sm font-bold uppercase tracking-[0.16em] text-white/70 mb-4">Links</h2>

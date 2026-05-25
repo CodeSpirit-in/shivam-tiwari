@@ -63,7 +63,7 @@ export function ProjectCard({
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2">
-          {p.tech.map((t) => (
+          {(p.tags ?? p.tech.slice(0, 4)).map((t) => (
             <span key={t} className={`rounded-[2px] px-3 py-1.5 text-[11px] uppercase tracking-[0.18em] ${chipClass}`}>
               {t}
             </span>

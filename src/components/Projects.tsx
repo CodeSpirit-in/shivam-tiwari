@@ -2,13 +2,10 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { Section } from "./Section";
 import { ProjectCard } from "./ProjectCard";
-import { featuredProjectSlugs, projects } from "@/lib/projects-data";
+import { projects } from "@/lib/projects-data";
 
 export function Projects() {
-  const featured = featuredProjectSlugs
-    .map((slug) => projects.find((project) => project.slug === slug))
-    .filter((project): project is (typeof projects)[number] => Boolean(project))
-    .slice(0, 11);
+  const featured = projects.filter((project) => project.production).slice(0, 5);
 
   return (
     <Section id="projects" eyebrow="Products" title="Things I've shipped.">

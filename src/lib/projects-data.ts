@@ -1,6 +1,7 @@
 import { Globe, Smartphone, type LucideIcon } from "lucide-react";
 import codespiritLogo from "@/assets/logo-codespirit.png";
 import expertkaroLogo from "@/assets/logo-expertkaro.jpg";
+import microkahaniLogo from "@/assets/logo-microkahani.png";
 import vithopiaLogo from "@/assets/logo-vithopia.jpeg";
 import accesswayLogo from "@/assets/logo-accessway.png";
 
@@ -21,7 +22,14 @@ export type Project = {
   screenshot?: string;
   stats?: { label: string; value: string }[];
   points: string[];
+  details?: string[];
+  problem?: string;
+  solution?: string;
+  architecture?: string[];
+  contributions?: string[];
   tech: string[];
+  tags?: string[];
+  production?: boolean;
   links: ProjectLink[];
   palette: ProjectPalette;
 };
@@ -61,21 +69,60 @@ export const projects: Project[] = [
   {
     slug: "codespirit",
     name: "CodeSpirit",
-    tagline: "Event & Hackathon SaaS — Web + Mobile",
+    tagline: "Full-Stack Scalable Community Platform",
     summary:
-      "A scalable event and hackathon platform that keeps organizers, judges, and participants in one place with QR check-ins, real-time chat, profiles, and payment flows.",
+      "A modern community platform with mobile apps, a web experience, and a dedicated admin panel built for high-volume events, referrals, and real-time engagement.",
     logo: codespiritLogo,
     stats: [
-      { label: "Active Users", value: "1000+" },
-      { label: "Scales to", value: "1M+" },
+      { label: "1000+ Active Users", value: "Website + App's + Dashboard" },
+      { label: "Designed For", value: "Millions" },
     ],
+    problem:
+      "Community apps often fail under load, lack event-driven architecture, and struggle to deliver seamless mobile experiences across chat, notifications, and payments.",
+    solution:
+      "Built CodeSpirit as a modular ecosystem with React Native mobile apps, a responsive web app, and an admin panel for operational control.",
     points: [
-      "Scalable multi-role platform for events, hackathons, QR check-ins, social profiles, and real-time chat — architected for 1M+ concurrent users.",
-      "Full system designed end-to-end: backend, mobile app, web dashboard. Currently scaled to 1000+ active users.",
+      "Designed a modular service architecture with event-driven Pub/Sub for real-time chat, notifications, and invite workflows.",
+      "Implemented universal invite links, deep linking, and multi-level referrals for viral growth and seamless mobile onboarding.",
     ],
-    tech: ["React.js", "TypeScript", "React Native", "Node.js", "Socket.io", "MongoDB", "Redis", "Razorpay", "Azure"],
+    details: [
+      "Delivered React Native Android/iOS mobile apps with a complementary web app and admin dashboard for event operations.",
+      "Built MongoDB schemas with indexes and aggregation pipelines for high-performance feeds, search, and relationships.",
+      "Implemented JWT auth, OTP login, email/password access, and OAuth social sign-in for flexible onboarding.",
+      "Integrated Razorpay payments with webhooks, Cloudinary media storage, Firebase FCM, and Notifee for production-grade notifications.",
+    ],
+    architecture: [
+      "Backend services separated into auth, messaging, payments, and media modules for independent scaling.",
+      "Realtime systems built with WebSockets and a Pub/Sub event bus to decouple live chat, presence, and notifications.",
+      "Redis caching layer for session data, feed precomputation, and rate-limited workflows.",
+      "Cloud-ready deployment design with mobile app stores, CDN media delivery, and server-side performance tuning.",
+    ],
+    contributions: [
+      "Led the full-stack platform architecture for community events, admin control, and referral growth systems.",
+      "Built production-ready FCM notification handling using React Native Notifee for foreground/background flows.",
+      "Scaled database access with MongoDB indexing and query optimization across event streams and user search.",
+      "Designed and launched secure Razorpay payment flows with wallet reconciliation and transaction audit logging.",
+    ],
+    tech: [
+      "React Native",
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Redis",
+      "WebSockets",
+      "Firebase FCM",
+      "React Native Notifee",
+      "Cloudinary",
+      "Razorpay",
+      "JWT",
+      "OAuth",
+    ],
+    tags: ["App", "Website", "Production"],
+    production: true,
     links: [
-      { label: "codespirit.in", href: "https://codespirit.in", icon: Globe },
+      { label: "Web App", href: "https://codespirit.in", icon: Globe },
+      { label: "Admin Panel", href: "https://codespirit.in/admin", icon: Globe },
       { label: "Android App", href: "https://play.google.com/store/apps/details?id=com.codespirit.app&hl=en_IN", icon: Smartphone },
     ],
     screenshot: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ3u9mlPoXJ6BHPJd1DHi5HaFsUGoeifmEfQ&s",
@@ -84,53 +131,238 @@ export const projects: Project[] = [
   {
     slug: "expertkaro",
     name: "ExpertKaro",
-    tagline: "Expert Consultation Platform — Web + Mobile",
+    tagline: "Real-time Expert Consultation Platform",
     summary:
-      "A consultation marketplace that connects users with verified doctors, lawyers, and mentors through secure chat, video calls, role-based access, and integrated payments.",
+      "A secure consultation platform offering mobile and web access to experts with video, chat, wallet payments, and multi-role authorization.",
     logo: expertkaroLogo,
-    points: [
-      "Multi-role platform connecting users with doctors, lawyers, and mentors via real-time chat and video calls.",
-      "Profile verification, role-based access control, Cashfree payments, and Cloudinary media management.",
+    stats: [
+      { label: "Website", value: "App" },
+      { label: "Media Services", value: "Audio + Video" },
     ],
-    tech: ["React Native", "TypeScript", "Node.js", "JWT", "FCM", "Cashfree", "Redis", "MongoDB", "Cloudinary", "Azure"],
+    problem:
+      "Standard expert consultation apps struggle with low-latency media, secure multi-role access, and notifications that work reliably in foreground and background.",
+    solution:
+      "Built ExpertKaro with React Native, a companion web app, Agora media, WebSockets, and Notifee for a secure, cross-platform consultation experience.",
+    points: [
+      "Implemented Agora SDK video/audio calls for low-latency expert sessions and session-level access control.",
+      "Built multi-role authorization for mentors and users along with social login, JWT auth, and secure media upload via ImageKit.",
+    ],
+    details: [
+      "Delivered a React Native mobile app plus a companion web app backed by a Node.js/Express consultation platform.",
+      "Built a secure wallet system with Cashfree integration, transaction flows, and balance tracking.",
+      "Implemented FCM and Notifee for advanced foreground/background notification handling and scheduled alerts.",
+      "Designed referral tracking and deep linking for shareable mentor invites and onboarding flows.",
+    ],
+    architecture: [
+      "Realtime chat and call signaling through WebSockets, with Agora managing media sessions securely.",
+      "Separated authorization, payment, and media upload services for compliance and scalability.",
+      "ImageKit integration for optimized image delivery in mentor profiles and documentation flows.",
+      "Wallet and transaction service built with audit logs, settlement routines, and refund handling.",
+    ],
+    contributions: [
+      "Led the secure consultation architecture and mentor/user access control design.",
+      "Built call notification flows using React Native Notifee to improve reliability in production.",
+      "Integrated Cashfree wallet payments with backend reconciliation and in-app transaction history.",
+      "Designed deep links for onboarding, referral sharing, and session resumption across devices.",
+    ],
+    tech: [
+      "React Native",
+      "React",
+      "Node.js",
+      "Express",
+      "WebSockets",
+      "Agora",
+      "Firebase FCM",
+      "React Native Notifee",
+      "Cashfree",
+      "ImageKit",
+      "MongoDB",
+      "JWT",
+      "OAuth",
+    ],
+    tags: ["App", "Website"],
+    production: true,
     links: [
-      { label: "expertkaro.com", href: "https://expertkaro.com", icon: Globe },
+     
       { label: "Android App", href: "https://play.google.com/store/apps/details?id=com.expertkaro.app&hl=en_IN", icon: Smartphone },
+       { label: "Web App", href: "https://expertkaro.com", icon: Globe },
     ],
     screenshot: "https://iili.io/qzfFNfe.png",
     palette: newProjectPalette("#111827", "#7c3aed", "#ec4899"),
   },
   {
-    slug: "vithopia",
-    name: "Vithopia",
-    tagline: "Web Agency + Internal SaaS Suite",
+    slug: "microkahani",
+    name: "MicroKahani",
+    tagline: "Media & Storytelling Platform — Contributor",
     summary:
-      "A web agency platform paired with an internal operations suite for project tracking, meetings, lead generation, and everyday delivery workflow automation.",
-    logo: vithopiaLogo,
-    points: [
-      "Full web agency platform with an internal admin suite powering day-to-day operations.",
-      "SaaS modules for meetings, project management, lead generation, and end-to-end workflow automation.",
+      "A scalable contributor-driven media platform with adaptive video streaming, monetization, analytics, and cloud-native media processing.",
+    logo: microkahaniLogo,
+    stats: [
+      { label: "Admin Dashboard", value: "Website + App" },
+      { label: "Cloud Delivery", value: "GCP, Azure, Cloudflare" },
     ],
-    tech: ["React.js", "Node.js", "TypeScript", "MongoDB", "Tailwind CSS", "Azure"],
-    links: [{ label: "vithopia.com", href: "https://vithopia.com", icon: Globe }],
-    screenshot: "https://iili.io/C9IVScu.png",
-    palette: newProjectPalette("#0f172a", "#0ea5e9", "#22c55e"),
+    problem:
+      "Video storytelling apps often fail to scale due to heavy media pipelines, slow uploads, and weak CDN integration for adaptive playback.",
+    solution:
+      "Built MicroKahani with a cloud-first transcoding pipeline, HLS adaptive streaming, analytics, and mobile delivery optimized for contributors.",
+    points: [
+      "Designed a fast onboarding experience with phone OTP and Google login for creators and viewers.",
+      "Integrated monetization, analytics, and notification flows to support a modern storytelling platform.",
+    ],
+    details: [
+      "Built end-to-end video processing using FFmpeg for multi-bitrate HLS output and cloud storage distribution.",
+      "Integrated Google AdMob and Cashfree for monetization across creator and viewer workflows.",
+      "Added Firebase FCM for engagement notifications and Google Analytics for usage insights.",
+      "Optimized media delivery using Cloudflare R2 CDN and multi-cloud storage architecture.",
+      "Supported both Android and iOS contributor experiences to widen platform reach.",
+    ],
+    architecture: [
+      "Audio/video ingestion pipeline with FFmpeg transcoding to adaptive HLS segments.",
+      "Cloud storage and CDN distribution on GCP, Azure, and Cloudflare R2 for global delivery.",
+      "Notification and analytics services built as independent modules for reliable scaling.",
+      "Performance improvements through codec optimization and bitrate profiles for mobile playback.",
+    ],
+    contributions: [
+      "Helped architect the video processing pipeline and adaptive streaming delivery model.",
+      "Built contributor authentication flows and monetization integration using AdMob and Cashfree.",
+      "Worked on analytics dashboards and engagement tracking for creators and platform admins.",
+      "Improved media upload and playback performance for mobile-first storytelling experiences.",
+    ],
+    tech: [
+      "React Native",
+      "Firebase FCM",
+      "Google AdMob",
+      "Cashfree",
+      "FFmpeg",
+      "HLS",
+      "GCP",
+      "Azure",
+      "Cloudflare R2",
+      "Google Analytics",
+    ],
+    tags: ["App", "Website"],
+    production: true,
+    links: [
+      { label: "Android App", href: "https://play.google.com/store/apps/details?id=com.microkahanihl=en_IN", icon: Smartphone },
+    ],
+    screenshot: "https://iili.io/CJfY16B.png",
+    palette: newProjectPalette("#111827", "#0284c7", "#0ea5e9"),
   },
   {
     slug: "accessway",
     name: "AccessWay",
-    tagline: "AI Assistant for People with Disabilities",
+    tagline: "AI-Powered Accessibility Navigation",
     summary:
-      "An accessibility-first assistant that helps people with disabilities complete everyday tasks using voice, vision, and conversational AI in a single adaptive experience.",
+      "An AI-driven assistive navigation platform for people with disabilities, combining voice guidance, smart hardware integration, indoor/outdoor routing, and community data.",
     logo: accesswayLogo,
-    points: [
-      "AI-powered accessibility assistant — helps people with disabilities navigate daily tasks via voice and adaptive interfaces.",
-      "Integrates speech, vision, and conversational AI into a single accessible experience.",
+    stats: [
+      { label: "Website + App", value: "" },
+      { label: "Assistive Modes", value: "Vision, Audio, Haptics" },
     ],
-    tech: ["React.js", "AI / LLMs", "Speech APIs", "Node.js", "TypeScript"],
-    links: [{ label: "accessway.xyz", href: "https://accessway.xyz", icon: Globe }],
+    problem:
+      "Mainstream navigation apps ignore accessibility constraints like elevator outages, inaccessible paths, and indoor wayfinding for users with disabilities.",
+    solution:
+      "Built AccessWay to deliver AI-powered accessible routing, real-time obstacle alerts, smart glasses support, and personalized navigation modes.",
+    points: [
+      "Delivered an accessible mobile-first app with personalized accessibility profiles and AI-generated accessible routes.",
+      "Built smart wearable integration for hands-free obstacle detection, audio guidance, and haptic alerts.",
+    ],
+    details: [
+      "Built adaptive route generation for visual, hearing, mobility, and cognitive support needs.",
+      "Integrated Azure AI Vision, Maps, Cognitive Services, and IoT for hardware and environment awareness.",
+      "Designed WCAG-friendly UI and mobile flows for accessible route discovery, navigation, and hazard reporting.",
+      "Launched community-driven accessibility reporting so users can contribute live data on ramps, elevators, and obstacles.",
+    ],
+    architecture: [
+      "AI-assisted routing engine powered by Azure Maps and Azure Machine Learning.",
+      "Smart glasses integration via Azure IoT for real-time obstacle detection and AR waypoint guidance.",
+      "Multi-modal notifications using Firebase FCM, Notifee, audio, and haptic channels.",
+      "Shared accessibility data model for crowdsourced route updates and environment conditions.",
+    ],
+    contributions: [
+      "Designed the accessibility-first product experience and inclusive route personalization.",
+      "Implemented AI-powered assistive navigation, smart hardware communication, and emergency alerts.",
+      "Built production-grade FCM/Notifee notification handling and deep-linking for accessible route sharing.",
+      "Helped define the platform’s support for visual impairment, mobility, hearing, and neurodivergent user modes.",
+    ],
+    tech: [
+      "React Native",
+      "Node.js",
+      "Firebase FCM",
+      "React Native Notifee",
+      "Azure AI",
+      "Azure Maps",
+      "Azure Cognitive Services",
+      "Azure IoT",
+      "Cloudflare CDN",
+      "JWT",
+      "OAuth",
+    ],
+    tags: ["App", "Website", "AI"],
+    production: true,
+    links: [
+      { label: "Website", href: "https://accessway.xyz", icon: Globe },
+      { label: "Android App", href: "https://play.google.com/store/apps/details?id=com.accessway.app&hl=en_IN", icon: Smartphone },
+    ],
     screenshot: "https://iili.io/qzfTEts.png",
     palette: newProjectPalette("#111827", "#f97316", "#facc15"),
+  },
+  {
+    slug: "vithopia",
+    name: "Vithopia",
+    tagline: "AI-Powered Digital Ecosystem & Automation Platform",
+    summary:
+      "A large-scale digital ecosystem combining AI workflow automation, creator systems, payment flows, and operational dashboards for modern teams.",
+    logo: vithopiaLogo,
+    stats: [
+      { label: "Website", value: "" },
+      { label: "Systems", value: "Realtime Operations" },
+    ],
+    problem:
+      "Complex digital ecosystems need better orchestration, shared workflows, and scalable real-time dashboards to keep teams aligned.",
+    solution:
+      "Built Vithopia with modular microservice patterns, real-time WebSocket tracking, AI workflow orchestration, and centralized operations management.",
+    points: [
+      "Delivered a unified platform for task orchestration, creator management, payment flows, and team operations.",
+      "Built scalable AI and automation systems designed for real-time workflow execution and shared digital infrastructure.",
+    ],
+    details: [
+      "Built user and creator modules with team management, task orchestration, and operation dashboards.",
+      "Designed payment and affiliate infrastructure with Stripe wallet flows and revenue tracking.",
+      "Introduced real-time workflow execution tracking with WebSockets and stateful operations monitoring.",
+      "Optimized backend API performance with MongoDB, Redis caching, and modular service separation.",
+    ],
+    architecture: [
+      "Modular backend architecture separating auth, workflow, payment, analytics, and AI services.",
+      "Real-time event handling with WebSockets for live dashboard updates and notifications.",
+      "AI automation integration for task execution, recommendations, and process orchestration.",
+      "Cloudflare CDN and optimized asset delivery for web and mobile interfaces.",
+    ],
+    contributions: [
+      "Developed scalable workflow and automation modules for user, team, and creator operations.",
+      "Built real-time dashboards and operational flows for tracking execution and status.",
+      "Improved API efficiency and backend performance for concurrent users and automation pipelines.",
+      "Led integrations for notifications, payments, AI services, and deep linking across the ecosystem.",
+    ],
+    tech: [
+      "React.js",
+      "React Native",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Redis",
+      "WebSockets",
+      "Stripe",
+      "Firebase FCM",
+      "React Native Notifee",
+      "Cloudflare CDN",
+      "AI",
+    ],
+    tags: ["Website", "AI"],
+    production: true,
+    links: [{ label: "Website", href: "https://vithopia.com", icon: Globe }],
+    screenshot: "https://iili.io/C9IVScu.png",
+    palette: newProjectPalette("#0f172a", "#0ea5e9", "#22c55e"),
   },
   {
     slug: "elite-founders",
@@ -138,6 +370,7 @@ export const projects: Project[] = [
     tagline: "Community Platform for Founders & Builders",
     summary:
       "A website and community destination where founders, builders, and community leaders meet, share resources, and connect in one curated space.",
+
     logo: createMonogramLogo("Elite Founders", newProjectPalette("#0d0f1e", "#7c3aed", "#34d399")),
     points: [
       "Designed for founders, builders, and community owners to meet and collaborate in one dedicated hub.",
@@ -399,17 +632,9 @@ export const projects: Project[] = [
 export const featuredProjectSlugs = [
   "codespirit",
   "expertkaro",
-  "vithopia",
+  "microkahani",
   "accessway",
-  "elite-founders",
-  "burnout-buddy",
-  "anonymously-group-chat",
-  "anonymous-video-call-chat",
-  "st-blogs",
-  "krishi-sarthi",
-  "adarpan",
-  "react-native-fcm-news",
-  "careerwill",
+  "vithopia",
 ] as const;
 
 export function getProjectBySlug(slug: string) {
