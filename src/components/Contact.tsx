@@ -10,7 +10,7 @@ const socials = [
   { icon: Mail, label: "Email", value: "shivamtiwari28189@gmail.com", href: "mailto:shivamtiwari28189@gmail.com" },
   { icon: Phone, label: "Phone", value: "+91 7065273202", href: "tel:+917065273202" },
   { icon: Github, label: "GitHub", value: "github.com/progressmantraclasses", href: "https://github.com/progressmantraclasses" },
-  { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/shivam13", href: "https://linkedin.com/in/shivam13" },
+  { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/shivamtiwari13", href: "https://linkedin.com/in/shivamtiwari13" },
 ];
 
 export function Contact() {
