@@ -243,7 +243,7 @@ export const projects: Project[] = [
     tags: ["App", "Website"],
     production: true,
     links: [
-      { label: "Android App", href: "https://play.google.com/store/apps/details?id=com.microkahanihl=en_IN", icon: Smartphone },
+      { label: "Android App", href: "https://play.google.com/store/apps/details?id=com.microkahani=en_IN", icon: Smartphone },
     ],
     screenshot: "https://iili.io/CJfY16B.png",
     palette: newProjectPalette("#111827", "#0284c7", "#0ea5e9"),
