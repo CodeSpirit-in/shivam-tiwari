@@ -290,7 +290,7 @@ export const projects: Project[] = [
       "Flutter",
       "Node.js",
       "AR Integration",
-      "Fast API"
+      "Fast API",
       "Redis",
       "Python",
       "Sockets",
