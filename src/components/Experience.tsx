@@ -5,7 +5,7 @@ import zeberLogo from "@/assets/logo-zeber.png";
 
 const experiences = [
   {
-    role: "Founding Software Engineer Intern",
+    role: "Founding Software Engineer",
     company: "MicroKahani Pvt Ltd",
     logo: microkahaniLogo,
     date: "Nov 2025",
