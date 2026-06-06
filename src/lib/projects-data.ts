@@ -288,7 +288,6 @@ export const projects: Project[] = [
     ],
     tech: [
       "Flutter",
-      "Node.js",
       "AR Integration",
       "Fast API",
       "Redis",
