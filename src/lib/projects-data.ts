@@ -275,15 +275,15 @@ export const projects: Project[] = [
       "Launched community-driven accessibility reporting so users can contribute live data on ramps, elevators, and obstacles.",
     ],
     architecture: [
-      "AI-assisted routing engine powered by Azure Maps and Azure Machine Learning.",
+      "AI-assisted routing engine powered by Google Maps and Azure Machine Learning.",
       "Smart glasses integration via Azure IoT for real-time obstacle detection and AR waypoint guidance.",
-      "Multi-modal notifications using Firebase FCM, Notifee, audio, and haptic channels.",
+      "Multi-modal notifications using Firebase FCM, audio, and haptic channels.",
       "Shared accessibility data model for crowdsourced route updates and environment conditions.",
     ],
     contributions: [
       "Designed the accessibility-first product experience and inclusive route personalization.",
       "Implemented AI-powered assistive navigation, smart hardware communication, and emergency alerts.",
-      "Built production-grade FCM/Notifee notification handling and deep-linking for accessible route sharing.",
+      "Built production-grade FCM notification handling and deep-linking for accessible route sharing.",
       "Helped define the platform’s support for visual impairment, mobility, hearing, and neurodivergent user modes.",
     ],
     tech: [
