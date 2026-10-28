@@ -5,7 +5,7 @@ import { ProjectCard } from "./ProjectCard";
 import { projects } from "@/lib/projects-data";
 
 export function Projects() {
-  const featured = projects.filter((project) => project.production).slice(0, 5);
+  const featured = projects.filter((project) => project.production).slice(0, 6);
 
   return (
     <Section id="projects" eyebrow="Products" title="Things I've shipped.">

@@ -7,11 +7,12 @@ export function About() {
       <div className="grid md:grid-cols-3 gap-6">
         <div className="md:col-span-2 glass rounded-[2px] p-8 md:p-10 space-y-5">
           <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
-            Software Engineer building real, scalable products like{" "}
+            Software Engineer and product builder behind real, scalable products like{" "}
             <span className="text-foreground font-medium">CodeSpirit</span>,{" "}
+            <span className="text-foreground font-medium">AccessWay</span>,{" "}
             <span className="text-foreground font-medium">ExpertKaro</span>, and{" "}
-            <span className="text-foreground font-medium">Microkahani</span> —
-            platforms already used by thousands of users in production.
+            <span className="text-foreground font-medium">LearnPrep</span> —
+            platforms built for meaningful user impact.
           </p>
           <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
             I've built systems end-to-end — from backend architecture to

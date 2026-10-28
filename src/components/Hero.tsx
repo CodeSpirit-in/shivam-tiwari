@@ -26,7 +26,7 @@ export function Hero() {
               View Projects <ArrowDown className="size-4" />
             </a>
             <a
-              href="/Shivam_Tiwari_Resume.pdf"
+              href="/Shivam_Tiwari_AIMl.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-[2px] border border-white/10 bg-white/5 hover:bg-white/8 px-6 py-3 font-semibold uppercase tracking-[0.15em] text-white/80 inline-flex items-center gap-2 transition-colors"

@@ -4,6 +4,7 @@ import expertkaroLogo from "@/assets/logo-expertkaro.jpg";
 import microkahaniLogo from "@/assets/logo-microkahani.png";
 import vithopiaLogo from "@/assets/logo-vithopia.jpeg";
 import accesswayLogo from "@/assets/logo-accessway.png";
+import learnprepLogo from "@/assets/logo-learnprep.jpg";
 
 export type ProjectLink = { label: string; href: string; icon: LucideIcon };
 
@@ -67,6 +68,30 @@ const newProjectPalette = (from: string, via: string, to: string): ProjectPalett
 
 export const projects: Project[] = [
   {
+    slug: "learnprep",
+    name: "LearnPrep",
+    tagline: "Exam Preparation Platform — Web + Android",
+    summary:
+      "A learning and exam-preparation platform available on the web and as an Android app, helping students practise, revise, and track their progress.",
+    logo: learnprepLogo,
+    stats: [
+      { label: "Platforms", value: "Web + Android App" },
+      { label: "Status", value: "Live on Play Store" },
+    ],
+    points: [
+      "Shipped LearnPrep on both web and Android, giving students a consistent preparation experience across devices.",
+      "Published and maintained the production Android app on Google Play alongside the web platform.",
+    ],
+    tech: ["React Native", "React", "Node.js", "MongoDB", "Android"],
+    tags: ["App", "Website", "Production"],
+    production: true,
+    links: [
+      { label: "Web App", href: "https://www.learnprep.in", icon: Globe },
+      { label: "Android App", href: "https://play.google.com/store/apps/details?id=com.learnprep", icon: Smartphone },
+    ],
+    palette: newProjectPalette("#052e16", "#16a34a", "#84cc16"),
+  },
+  {
     slug: "codespirit",
     name: "CodeSpirit",
     tagline: "Full-Stack Scalable Community Platform",
@@ -74,7 +99,7 @@ export const projects: Project[] = [
       "A modern community platform with mobile apps, a web experience, and a dedicated admin panel built for high-volume events, referrals, and real-time engagement.",
     logo: codespiritLogo,
     stats: [
-      { label: "1000+ Active Users", value: "Website + App's + Dashboard" },
+      { label: "12k+ Students", value: "Website + Apps + Dashboard" },
       { label: "Designed For", value: "Millions" },
     ],
     problem:
@@ -243,7 +268,7 @@ export const projects: Project[] = [
     tags: ["App", "Website"],
     production: true,
     links: [
-      { label: "Android App", href: "https://play.google.com/store/apps/details?id=com.microkahani=en_IN", icon: Smartphone },
+      { label: "Android App", href: "https://play.google.com/store/apps/details?id=com.microkahani", icon: Smartphone },
     ],
     screenshot: "https://iili.io/CJfY16B.png",
     palette: newProjectPalette("#111827", "#0284c7", "#0ea5e9"),
@@ -641,6 +666,7 @@ export const projects: Project[] = [
 ];
 
 export const featuredProjectSlugs = [
+  "learnprep",
   "codespirit",
   "expertkaro",
   "microkahani",
