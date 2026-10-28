@@ -2,7 +2,7 @@ import { Section } from "./Section";
 import microkahaniLogo from "@/assets/logo-microkahani.png";
 import tbsLogo from "@/assets/logo-tbs.png";
 import zeberLogo from "@/assets/logo-zeber.png";
-import superkalamLogo from "@/assets/logo-superkalam.webp";
+import superkalamLogo from "@/assets/unnamed (2).png";
 import heyhomiLogo from "@/assets/logo-heyhomi.svg";
 import accesswayLogo from "@/assets/logo-accessway.png";
 import codespiritLogo from "@/assets/logo-codespirit.png";

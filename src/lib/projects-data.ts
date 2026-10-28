@@ -76,6 +76,7 @@ export const projects: Project[] = [
     logo: learnprepLogo,
     stats: [
       { label: "Platforms", value: "Web + Android App" },
+      { label: "Admin Panel", value: "Dashboard" },
       { label: "Status", value: "Live on Play Store" },
     ],
     points: [
@@ -99,7 +100,7 @@ export const projects: Project[] = [
       "A modern community platform with mobile apps, a web experience, and a dedicated admin panel built for high-volume events, referrals, and real-time engagement.",
     logo: codespiritLogo,
     stats: [
-      { label: "12k+ Students", value: "Website + Apps + Dashboard" },
+      { label: "12k+ Students", value: "Website + Apps" },
       { label: "Designed For", value: "Millions" },
     ],
     problem:
@@ -161,7 +162,7 @@ export const projects: Project[] = [
       "A secure consultation platform offering mobile and web access to experts with video, chat, wallet payments, and multi-role authorization.",
     logo: expertkaroLogo,
     stats: [
-      { label: "Website", value: "App" },
+      { label: "Platforms", value: "App + Website" },
       { label: "Media Services", value: "Audio + Video" },
     ],
     problem:
@@ -281,7 +282,7 @@ export const projects: Project[] = [
       "An AI-driven assistive navigation platform for people with disabilities, combining voice guidance, smart hardware integration, indoor/outdoor routing, and community data.",
     logo: accesswayLogo,
     stats: [
-      { label: "Website + App", value: "" },
+      { label: "Platforms", value: "App + Website" },
       { label: "Assistive Modes", value: "Vision, Audio, Haptics" },
     ],
     problem:
@@ -338,7 +339,7 @@ export const projects: Project[] = [
     production: true,
     links: [
       { label: "Website", href: "https://accessway.xyz", icon: Globe },
-      // { label: "Android App", href: "https://play.google.com/store/apps/details?id=com.accessway.app&hl=en_IN", icon: Smartphone },
+      { label: "Android App", href: "https://play.google.com/store/apps/details?id=com.accessway.app&hl=en_IN", icon: Smartphone },
     ],
     screenshot: "https://iili.io/qzfTEts.png",
     palette: newProjectPalette("#111827", "#f97316", "#facc15"),
@@ -352,6 +353,7 @@ export const projects: Project[] = [
     logo: vithopiaLogo,
     stats: [
       { label: "Website", value: "" },
+      { label: "Platforms", value: "Web + Dashboard" },
       { label: "Systems", value: "Realtime Operations" },
     ],
     problem:

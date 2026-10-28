@@ -27,6 +27,17 @@ export function ProjectCard({
   const logoRingClass = isDark ? "bg-white/6 border-white/10" : "bg-white/75 border-black/10";
   const rawPath = ProjectRoute.path.replace("$slug", p.slug);
   const projectPath = rawPath.startsWith("/") ? rawPath : `/${rawPath}`;
+  const platformTags = (p.tags ?? []).filter((tag) => tag === "App" || tag === "Website");
+  const metadataChips = [
+    ...(p.production ? ["Production"] : []),
+    ...(p.tags ?? []).filter((tag) => tag !== "App" && tag !== "Website"),
+    ...p.stats
+      ?.slice(0, 1)
+      .flatMap((stat) => [stat.label, stat.value])
+      .filter((value) => value && !/^(website|app|website \+ app|web \+ android app)$/i.test(value))
+      ?? [],
+    ...p.stats?.slice(1).flatMap((stat) => [stat.label, stat.value]).filter(Boolean) ?? [],
+  ];
 
   return (
     <article
@@ -63,7 +74,7 @@ export function ProjectCard({
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2">
-          {(p.tags ?? p.tech.slice(0, 4)).map((t) => (
+          {[...platformTags, ...metadataChips].filter((tag, index, tags) => tags.indexOf(tag) === index).map((t) => (
             <span key={t} className={`rounded-[2px] px-3 py-1.5 text-[11px] uppercase tracking-[0.18em] ${chipClass}`}>
               {t}
             </span>
@@ -72,7 +83,7 @@ export function ProjectCard({
 
         <div className="mt-auto pt-6 grid gap-3 md:grid-cols-[1fr_auto] items-end">
           <div className={`rounded-[2px] px-4 py-3 text-sm font-semibold uppercase tracking-[0.16em] ${accentBarClass}`}>
-            {p.stats?.[0] ? `${p.stats[0].value} · ${p.stats[0].label}` : p.links[0]?.label ?? "Live Project"}
+            {p.stats?.[0]?.value ?? p.links[0]?.label ?? "Live Project"}
           </div>
 
           <div className="flex flex-wrap gap-2 justify-start md:justify-end">
